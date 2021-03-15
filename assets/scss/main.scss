@@ -1,2 +1,20 @@
+// GLOBAL
 @import "global/variables";
+@import "global/functions";
+@import "global/typography";
 @import "global/reset";
+
+
+// COMPONENTS
+@import "components/navbar";
+@import "components/hero";
+@import "components/button";
+@import "components/index";
+
+
+// SECTIONS
+@import "sections/index";
+
+
+// RESPONSIVE
+@import "layout/responsive";

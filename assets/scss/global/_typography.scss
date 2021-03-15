@@ -1,0 +1,38 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $default;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headings;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $fz-6;
+}
+
+h2 {
+  font-size: $fz-5;
+}
+
+h3 {
+  font-size: $fz-4;
+}
+
+h4 {
+  font-size: $fz-3;
+}
+
+p {
+  font-size: $fz-1;
+  line-height: $fz-1 * 1.5;
+}
+
+span {
+  line-height: 1.2;
+}

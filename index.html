@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Home | Vegetabler</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -14,12 +14,75 @@
 </head>
 <body>
 
-  <h1>Hello, World!</h1>
+  <!-----------------NAVBAR----------------->
+  <header class="navbar">
+    <nav>
+      <!-- BRAND -->
+      <a href="" class="brand">
+        <picture>
+          <source srcset="assets/img/brand-light.svg" media="(min-width: 768px)" alt="Vegetabler industry">
+          <img src="assets/img/brand-mobile.svg" alt="Vegetabler industry">
+        </picture>
+      </a>
 
-  <img src="assets/img/brand-light.svg" alt="img1">
+      <!-- TOGGLER -->
+      <button type="button" class="toggler" target="#header-navbar-menu">
+        <span></span>
+      </button>
+
+      <div class="menu" id="header-navbar-menu">
+        <ul>
+          <li><a href="" class="active">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Galery</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-----------------HERO----------------->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        Fresh vegetable
+        you find here
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat similique praesentium saepe rerum quia est.
+      </p>
+      <button type="button" class="btn btn-rounded btn-outline btn-outline-light">Contact us</button>
+    </div>
+  </section>
+
+  <!-----------------SECTION-PRODUCTS----------------->
+  <section class="products">
+    <h2>Products</h2>
+
+    <div class="products-container">
+      <div class="product-item">
+        <div class="img-container">
+          <div class="img"></div>
+        </div>
+      </div>
+
+      <div class="products-info">
+        <ul class="products"></ul>
+
+        <div class="product-info">
+          <span class="name">Tomato</span>
+          <span class="price">$<span>20</span> <small>per 2.2lb</small></span>
+          <span class="qnt">Quantity: 1</span>
+          <button class="btn btn-lg btn-rounded">Buy</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SCRIPT -->
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/products.js"></script>
 
 </body>
 </html>

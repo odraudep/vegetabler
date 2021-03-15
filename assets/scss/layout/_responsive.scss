@@ -1,0 +1,53 @@
+@media only screen and (max-width: $xl) {
+  // NAVBAR
+  button.toggler {
+    display: block;
+  }
+
+  #header-navbar-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem 1rem 1rem;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    transition: left .4s cubic-bezier(0, 0, 0.2, 1);
+    box-sizing: border-box;
+    background-color: $dark1;
+    color: white;
+
+    &.open {
+      left: 0;
+    }
+
+    ul {
+      display: block;
+      width: 100%;
+    }
+
+    li {
+      margin: 1em 0;
+      text-align: center;
+
+      a {
+        display: block;
+        padding: 1em 2em;
+        outline-color: $dark3 !important;
+      }
+    }
+  }
+
+  section.products .products-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: $xsm) {
+  html {
+    font-size: 62.5%;
+  }
+}

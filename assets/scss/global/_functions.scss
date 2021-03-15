@@ -1,0 +1,15 @@
+@mixin flex-center($x: true, $y: true) {
+  display: flex;
+  @if ($x == true) {
+    justify-content: center;
+  }
+  @if ($y == true) {
+    align-items: center;
+  }
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

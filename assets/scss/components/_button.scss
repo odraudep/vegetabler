@@ -1,0 +1,76 @@
+.btn {
+  cursor: pointer;
+  border: .15em solid transparent;
+  position: relative;
+  padding: .5em 1.25em;
+  border-radius: .15em;
+  transition: {
+    property: background-color, color;
+    duration: .4s, .4s;
+  }
+  outline: none;
+  transform-style: preserve-3d;
+  background-color: $color1;
+  font-size: $fz-1;
+  font-weight: bold;
+  color: $base;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color1, 10%);
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(darken($color1, 20%), .5);
+  }
+
+  &:active,
+  &:focus {
+    transition: none;
+    transform: translate3d(0, .065em, 0);
+    box-shadow: none;
+  }
+
+  &.btn-rounded {
+    border-radius: 2em;
+  }
+
+  &.btn-outline {
+    border-color: $color1;
+    background-color: transparent;
+    color: $dark1;
+
+    &:hover,
+    &:focus {
+      background-color: $color1;
+      color: $base;
+    }
+
+    &.btn-outline-light {
+      color: $base;
+    }
+
+    &.actived {
+      transition: none;
+      background-color: $color1;
+      color: $base;
+
+      &:hover,
+      &:active,
+      &:focus {
+        transform: translate3d(0, 0, 0);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.btn-sm {
+    padding: .35em 1.15em;
+    font-size: $fz-0;
+  }
+
+  &.btn-lg {
+    padding-right: 4em;
+    padding-left: 4em;
+  }
+}

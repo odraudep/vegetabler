@@ -1,0 +1,35 @@
+section.hero {
+  @include flex-center($x: false);
+  min-height: calc(100vh - 82px);
+  max-height: 1000px;
+  box-sizing: border-box;
+  position: relative;
+  background: {
+    image: radial-gradient(
+      50.15% 50.83% at 34.48% 50%,
+      rgba($dark1, .3) 0%,
+      rgba($dark1, .9) 100%
+    ), url(../img/hero-bg.jpg);
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+
+  .container {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    max-width: 15ch;
+    letter-spacing: .2em;
+    color: $color1;
+  }
+
+  p {
+    max-width: 60ch;
+    margin: 2em 0 1em;
+    color: $base;
+  }
+}
