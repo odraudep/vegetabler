@@ -1,0 +1,14 @@
+// list
+ul.list-check {
+  list-style-image: url("../img/check.svg");
+
+  li {
+    margin: .5em 0;
+
+    &::before {
+      content: '';
+      margin-left: .5em;
+    }
+  }
+
+}
