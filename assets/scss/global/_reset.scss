@@ -8,7 +8,7 @@ html.hide {
 }
 
 body {
-  background-color: $base;
+  background-color: $base-color;
   color: $dark1;
 }
 
@@ -44,4 +44,9 @@ a {
 
 small {
   font-size: .5em;
+}
+
+ul {
+  list-style: none;
+  list-style-position: inside;
 }

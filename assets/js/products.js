@@ -67,19 +67,28 @@
       const
         clickElement = element.querySelector("img"),
         vegSelected = container.querySelector(".product-item .img-container .img"),
-        vegSelectedImg = vegSelected.querySelector("img"),
-        txt = container.querySelector(".products-info .product-info"),
-        txt_data = {
-          name: txt.querySelector("span.name"),
-          price: txt.querySelector("span.price span")
-        },
-        veg = vegetables.filter(item => item._id == clickElement.getAttribute("_id"));
+        vegSelectedImg = vegSelected.querySelector("img");
 
       element.replaceChild(vegSelectedImg, clickElement);
       vegSelected.appendChild(clickElement);
 
-      txt_data.name.innerHTML = veg[0].name;
-      txt_data.price.innerHTML = veg[0].price;
+      updateInf();
     });
   });
+
+  function updateInf() {
+    const
+      txt = container.querySelector(".products-info .product-info"),
+      txt_data = {
+        name: txt.querySelector("span.name"),
+        price: txt.querySelector("span.price span")
+      },
+      vegSelected = container.querySelector(".product-item .img-container .img img"),
+      veg = vegetables.filter(item => item._id == vegSelected.getAttribute("_id"));
+
+    txt_data.name.innerHTML = veg[0].name;
+    txt_data.price.innerHTML = veg[0].price;
+  }
+
+  updateInf();
 })();

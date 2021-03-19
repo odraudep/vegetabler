@@ -13,9 +13,9 @@ $fz-0: $fz-1 / $scale;
 
 
 // FONT FAMILY
-$headings: 'Kaushan Script', cursive;
-$default: 'Poppins', sans-serif;
-$secundary: 'Merriweather', serif;
+$font-headings: 'Kaushan Script', cursive;
+$font-default: 'Poppins', sans-serif;
+$font-secundary: 'Merriweather', serif;
 
 
 // COLORS
@@ -27,7 +27,7 @@ $color1: #3AAE68;
 $color2: #81E696;
 $color3: #DDF2C1;
 
-$base: #F5F5F5;
+$base-color: #F5F5F5;
 
 
 // VIEW
@@ -35,7 +35,6 @@ $xsm: 20rem; // 320px
 $sm: 36rem; // 576px
 $md: 48rem; // 768px
 $xl: 75rem; // 1200px
-
 
 
 $px: 2rem;

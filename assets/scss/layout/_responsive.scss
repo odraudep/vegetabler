@@ -43,10 +43,45 @@
 
   section.products .products-container {
     grid-template-columns: 1fr;
+    gap: 5%;
+  }
+}
+
+@media only screen and (max-width: $md) {
+  section.products .products {
+    &:hover {
+      cursor: grab;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    li:hover {
+      cursor: pointer;
+    }
+  }
+
+  section.about {
+    grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (max-width: $xsm) {
+  $px: .8rem;
+
+  header.navbar nav {
+    padding: 1rem $px;
+  }
+
+  section {
+    padding: 5rem $px;
+  }
+
+  section.about .txt {
+    padding: 5rem $px 10rem;
+  }
+
   html {
     font-size: 62.5%;
   }

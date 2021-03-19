@@ -4,27 +4,32 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: $default;
+  font-family: $font-default;
 }
 
-h1, h2, h3, h4 {
-  font-family: $headings;
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+  font-family: $font-headings;
   line-height: 1.2;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: $fz-6;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: $fz-5;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: $fz-4;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: $fz-3;
 }
 

@@ -1,6 +1,7 @@
 section.hero {
   @include flex-center($x: false);
-  min-height: calc(100vh - 82px);
+  height: calc(100vh - 82px);
+  min-height: 30rem;
   max-height: 1000px;
   box-sizing: border-box;
   position: relative;
@@ -9,7 +10,7 @@ section.hero {
       50.15% 50.83% at 34.48% 50%,
       rgba($dark1, .3) 0%,
       rgba($dark1, .9) 100%
-    ), url(../img/hero-bg.jpg);
+    ), url("../img/hero-bg.jpg");
     position: center;
     size: cover;
     repeat: no-repeat;
@@ -30,6 +31,6 @@ section.hero {
   p {
     max-width: 60ch;
     margin: 2em 0 1em;
-    color: $base;
+    color: $base-color;
   }
 }
