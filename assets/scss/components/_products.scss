@@ -3,8 +3,6 @@ section.products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15%;
-    max-width: 1920px;
-    margin: 0 auto;
 
     .product-item .img-container {
       width: 100%;

@@ -16,7 +16,7 @@
 
   <!-----------------NAVBAR----------------->
   <header class="navbar">
-    <nav>
+    <nav class="container">
       <!-- BRAND -->
       <a href="" class="brand">
         <picture>
@@ -60,7 +60,7 @@
   <section class="products">
     <h2>Products</h2>
 
-    <div class="products-container">
+    <div class="container products-container">
       <div class="product-item">
         <div class="img-container">
           <div class="img"></div>
@@ -81,7 +81,7 @@
   </section>
 
   <!-----------------SECTION-ABOUT----------------->
-  <section class="about">
+  <section class="container about">
     <div class="txt">
       <span>Want to know the best place to buy your vegetables?</span>
 
@@ -106,14 +106,37 @@
   </section>
 
   <!-----------------SECTION-GALERY----------------->
-  <section class="galery">
-    <h2>Galery</h2>
+  <section class="gallery">
+    <h2>Gallery</h2>
+
+    <div class="container">
+      <div class="btns-group">
+        <button class="btn btn-sm btn-outline actived">All</button>
+        <button class="btn btn-sm btn-outline">Place</button>
+        <button class="btn btn-sm btn-outline">Workers</button>
+      </div>
+
+      <div class="gallery-container">
+        <div class="grid">
+          <img src="assets/img/vegetable3.jpg">
+          <img src="assets/img/person1.jpg">
+          <img src="assets/img/vegetable1.jpg">
+          <img src="assets/img/person1.jpg">
+          <img src="assets/img/vegetable2.jpg">
+          <img src="assets/img/vegetable5.jpg">
+          <img src="assets/img/person2.jpg">
+          <img src="assets/img/vegetable4.jpg">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SCRIPT -->
   <script src="assets/js/menu.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/dragslider.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/masonry.js"></script>
 
 </body>
 </html>

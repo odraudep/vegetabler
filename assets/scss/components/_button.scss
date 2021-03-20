@@ -15,13 +15,24 @@
   font-weight: bold;
   color: $base-color;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: darken($color1, 10%);
   }
 
-  &:hover {
-    box-shadow: 0 2px 5px rgba(darken($color1, 20%), .5);
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    @include absolute;
+    border-radius: inherit;
+    transform: translate3d(0, 0, -1px);
+    opacity: 0;
+    transition: opacity .4s;
+    box-shadow: 0 .1875em .3125rem rgba(darken($color1, 20%), .6);
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 
   &:active,
@@ -40,8 +51,7 @@
     background-color: transparent;
     color: $dark1;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: $color1;
       color: $base-color;
     }
@@ -59,7 +69,10 @@
       &:active,
       &:focus {
         transform: translate3d(0, 0, 0);
-        box-shadow: none;
+      }
+
+      &:hover::before {
+        opacity: 0;
       }
     }
   }
