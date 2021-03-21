@@ -1,7 +1,5 @@
 const products = document.querySelector("section.products .products");
 
-dragSlider(products);
-
 function dragSlider(element) {
   let
     pressed = false,
@@ -36,3 +34,5 @@ function dragSlider(element) {
     element.scrollLeft = scrollLeft - step;
   });
 }
+
+dragSlider(products);

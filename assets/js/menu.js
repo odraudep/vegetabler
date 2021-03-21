@@ -24,11 +24,9 @@
       heroHeight = Math.round(getComputedStyle(hero).height.slice(0, this.length - 2));
 
     if (scroll > heroHeight) {
-      navbar.style.position = "sticky";
-      navbar.style.top = 0;
-      navbar.style.boxShadow = "0 1px 5px #00000030";
+      navbar.classList.add("fixed");
     } else if (scroll == 0) {
-      navbar.removeAttribute("style");
+      navbar.classList.remove("fixed");
     }
   }
 
