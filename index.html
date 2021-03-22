@@ -32,18 +32,18 @@
 
       <div class="menu" id="header-navbar-menu">
         <ul>
-          <li><a href="" class="active">Home</a></li>
-          <li><a href="">Products</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Galery</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#gallery">Galery</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <!-----------------HERO----------------->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="container" animate="left">
       <h1>
         Fresh vegetable
@@ -57,8 +57,8 @@
   </section>
 
   <!-----------------SECTION-PRODUCTS----------------->
-  <section class="products">
-    <h2>Products</h2>
+  <section class="products" id="products">
+    <h2 animate="bottom">Products</h2>
 
     <div class="container products-container">
       <div class="product-item" animate="left">
@@ -81,7 +81,7 @@
   </section>
 
   <!-----------------SECTION-ABOUT----------------->
-  <section class="container about">
+  <section class="container about" id="about">
     <div class="txt">
       <div animate="left">
         <span>Want to know the best place to buy your vegetables?</span>
@@ -108,8 +108,8 @@
   </section>
 
   <!-----------------SECTION-GALERY----------------->
-  <section class="gallery">
-    <h2>Gallery</h2>
+  <section class="gallery" id="gallery">
+    <h2 animate="bottom">Gallery</h2>
 
     <div class="container">
       <div class="btns-group" animate="left">
@@ -119,24 +119,13 @@
       </div>
 
       <div class="gallery-container" animate="bottom">
-        <div class="grid">
-          <img src="assets/img/person1.jpg" alt="Person 1">
-          <img src="assets/img/person2.jpg" alt="Person 2">
-          <img src="assets/img/person3.jpg" alt="Person 3">
-          <img src="assets/img/person4.jpg" alt="Person 4">
-          <img src="assets/img/place1.jpg" alt="Place 1">
-          <img src="assets/img/place2.jpg" alt="Place 2">
-          <img src="assets/img/place3.jpg" alt="Place 3">
-          <img src="assets/img/place4.jpg" alt="Place 4">
-          <img src="assets/img/place5.jpg" alt="Place 5">
-          <img src="assets/img/place6.jpg" alt="Place 6">
-          <img src="assets/img/place7.jpg" alt="Place 7">
-          <img src="assets/img/place8.jpg" alt="Place 8">
-          <img src="assets/img/place9.jpg" alt="Place 9">
-          <img src="assets/img/place10.jpg" alt="Place 10">
-        </div>
+        <div class="grid"></div>
       </div>
     </div>
+  </section>
+
+  <!-----------------SECTION-CONTACT----------------->
+  <section class="contact" id="contact">
   </section>
 
   <!-- SCRIPT -->
@@ -144,7 +133,6 @@
   <script src="assets/js/products.js"></script>
   <script src="assets/js/dragslider.js"></script>
   <script src="assets/js/gallery.js"></script>
-  <script src="assets/js/masonry.js"></script>
   <script src="assets/js/animationscroll.js"></script>
 
 </body>

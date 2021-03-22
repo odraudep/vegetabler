@@ -36,7 +36,10 @@
       a {
         display: block;
         padding: 1em 2em;
-        outline-color: $dark3 !important;
+
+        &:focus {
+          outline-color: $dark3;
+        }
       }
     }
   }
@@ -44,6 +47,10 @@
   section.products .products-container {
     grid-template-columns: 1fr;
     gap: 5%;
+  }
+
+  section.gallery .gallery-container .grid {
+    column-count: 4;
   }
 }
 
@@ -65,10 +72,24 @@
   section.about {
     grid-template-columns: 1fr;
   }
+
+  section.gallery .gallery-container .grid {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: $sm) {
+  section.gallery .gallery-container .grid {
+    column-count: 2;
+  }
 }
 
 @media only screen and (max-width: $xsm) {
   $px: .8rem;
+
+  html {
+    font-size: 62.5%;
+  }
 
   header.navbar nav {
     padding: 1rem $px;
@@ -82,7 +103,7 @@
     padding: 5rem $px 10rem;
   }
 
-  html {
-    font-size: 62.5%;
+  section.gallery .gallery-container .grid {
+    column-count: 1;
   }
 }

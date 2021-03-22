@@ -26,13 +26,20 @@ h2 {
   margin: 0 auto 2em;
   padding-bottom: .25em;
 
-  &::after {
+  &.show::before {
+    animation: h2BaseLine .4s .4s;
+    animation-fill-mode: forwards;
+  }
+
+  &::before {
     content: '';
     width: 100%;
     height: .125rem;
     position: absolute;
     bottom: 0;
     left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
     background-color: $color1;
   }
 }
@@ -54,4 +61,14 @@ ul {
 .container {
   max-width: 1920px;
   margin: 0 auto;
+}
+
+@keyframes h2BaseLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }

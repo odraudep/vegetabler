@@ -1,22 +1,22 @@
-(function() {
-  function resizeGridItem(item) {
-    const
-      grid = item.parentElement,
-      rowHeight = parseInt(getComputedStyle(grid).gridAutoRows),
-      rowGap = parseInt(getComputedStyle(grid).rowGap),
-      rowSpan = Math.ceil((item.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+function resizeMasonryItem(item) {
+  var grid = document.querySelector('section.gallery .grid'),
+    rowGap = parseInt(getComputedStyle(grid).getPropertyValue('grid-row-gap')),
+    rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
 
-    item.style.gridRowEnd = "span " + rowSpan;
-  }
+  var rowSpan = Math.ceil((item.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+  item.style.gridRowEnd = 'span ' + rowSpan;
+}
 
-  function resizeAllGridItems() {
-    const allItems = document.querySelectorAll("section.gallery .grid img");
+function resizeAllMasonryItems() {
+  var allItems = document.querySelectorAll('section.gallery .grid img');
 
-    allItems.forEach(element => {
-      resizeGridItem(element);
-    });
-  }
+  allItems.forEach(element => {
+    resizeMasonryItem(element);
+  });
+}
 
-  resizeAllGridItems();
-  addEventListener("resize", resizeAllGridItems);
-})();
+var masonryEvents = ['load', 'resize'];
+masonryEvents.forEach(function (event) {
+  addEventListener(event, resizeAllMasonryItems);
+});
+

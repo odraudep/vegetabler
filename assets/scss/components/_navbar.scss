@@ -144,7 +144,7 @@ button.toggler {
       }
 
       &:focus {
-        outline: 1px dashed black;
+        outline: 1px dashed $dark1;
       }
 
       &.active {

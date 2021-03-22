@@ -1,8 +1,10 @@
+$animate-num: 3.125rem;
+
 [animate] {
   opacity: 0;
   transition: {
     property: opacity, transform;
-    duration: .4s, .4s;
+    duration: .3s, .3s;
     timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
   }
 
@@ -13,17 +15,17 @@
 }
 
 [animate="right"] {
-  transform: translate3d(2rem, 0, 0);
+  transform: translate3d($animate-num, 0, 0);
 }
 
 [animate="left"] {
-  transform: translate3d(-2rem, 0, 0);
+  transform: translate3d(-$animate-num, 0, 0);
 }
 
 [animate="top"] {
-  transform: translate3d(0, -2rem, 0);
+  transform: translate3d(0, -$animate-num, 0);
 }
 
 [animate="bottom"] {
-  transform: translate3d(0, 2rem, 0);
+  transform: translate3d(0, $animate-num, 0);
 }

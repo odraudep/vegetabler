@@ -1,11 +1,12 @@
-(function() {
+(function () {
   const
     navbar = document.querySelector("header.navbar"),
+    navHeight = navbar.getBoundingClientRect().height,
     toggler = document.querySelector(".toggler"),
     links = document.querySelectorAll("header.navbar .menu a");
 
   // Toggler event
-  toggler.addEventListener("click", function() {
+  toggler.addEventListener("click", function () {
     const target = this.parentNode.querySelector(this.getAttribute("target"));
 
     this.toggleAttribute("open");
@@ -14,20 +15,43 @@
     document.querySelector("html").classList.toggle("hide");
   });
 
-  // Scroll for menu to be fixed on top
-  addEventListener("scroll", fixed);
+  // Scroll Event
+  addEventListener("scroll", () => {
+    fixed();
+    changeActive();
+  });
 
   function fixed() {
     const
       scroll = pageYOffset,
       hero = document.querySelector("section.hero"),
-      heroHeight = Math.round(getComputedStyle(hero).height.slice(0, this.length - 2));
+      heroHeight = Math.round(hero.getBoundingClientRect().height),
+      viewY = innerHeight * .25;
 
-    if (scroll > heroHeight) {
+    if (scroll > heroHeight - viewY) {
       navbar.classList.add("fixed");
     } else if (scroll == 0) {
       navbar.classList.remove("fixed");
     }
+  }
+
+  function changeActive() {
+    const
+      scroll = pageYOffset,
+      links = document.querySelectorAll("header.navbar .menu a");
+
+    links.forEach(element => {
+      const
+        id = element.getAttribute("href"),
+        section = document.querySelector(id);
+
+      if (scroll > section.offsetTop - navHeight - 1) {
+        const lastAc = element.parentElement.parentElement.querySelector(".active");
+
+        lastAc.classList.remove("active");
+        element.classList.add("active");
+      }
+    });
   }
 
   // Scroll to sections
@@ -35,14 +59,22 @@
     element.addEventListener("click", e => {
       e.preventDefault();
 
-      changeActived(element);
+      scrollToSection(element);
     });
   });
 
-  function changeActived(element) {
-    const active = document.querySelector("header.navbar .menu a.active");
+  function scrollToSection(element) {
+    const
+      id = element.getAttribute("href"),
+      target = document.querySelector(id);
 
-    active.classList.remove("active");
-    element.classList.add("active");
+    if (toggler.hasAttribute("open"))
+      toggler.click();
+
+    scrollTo({
+      left: 0,
+      top: target.offsetTop - navHeight,
+      behavior: "smooth"
+    });
   }
 })();
