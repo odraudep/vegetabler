@@ -15,6 +15,14 @@
     document.querySelector("html").classList.toggle("hide");
   });
 
+  //  Check if the menu is open when the viewport is enough greater to hide the toggler
+  addEventListener("resize", () => {
+    if (innerWidth >= 1200) {
+      if (toggler.hasAttribute("open"))
+        toggler.click();
+    }
+  });
+
   // Scroll Event
   addEventListener("scroll", () => {
     fixed();

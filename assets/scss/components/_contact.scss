@@ -1,0 +1,57 @@
+section.contact {
+  background-color: $dark1;
+  color: $base-color;
+
+  form {
+    width: 100%;
+    max-width: 50rem;
+    @include mx-auto;
+  }
+
+  label,
+  input,
+  textarea,
+  button {
+    display: block;
+  }
+
+  label,
+  input,
+  textarea {
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba($base-color, .25);
+    }
+  }
+
+  label {
+    font-size: $fz-2;
+    font-family: $font-headings;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > * {
+      flex: auto;
+    }
+  }
+
+  label#message {
+    width: 65%;
+    margin-top: 1rem;
+    @include mx-auto;
+
+    textarea {
+      resize: none;
+      height: 12em;
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+    @include mx-auto;
+  }
+}

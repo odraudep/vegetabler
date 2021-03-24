@@ -1,0 +1,15 @@
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .5em;
+  border: none;
+  outline: none;
+  border-radius: .25rem;
+  font-size: 1rem;
+
+  &:focus {
+    box-shadow: 0 0 0 .2rem rgba($dark1, .25);
+  }
+}

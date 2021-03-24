@@ -8,6 +8,7 @@ html.hide {
 }
 
 body {
+  overflow-x: hidden;
   background-color: $base-color;
   color: $dark1;
 }
@@ -23,10 +24,13 @@ section {
 h2 {
   width: fit-content;
   position: relative;
-  margin: 0 auto 2em;
+  @include mx-auto;
+  margin-bottom: 2em;
   padding-bottom: .25em;
 
   &.show::before {
+    transform-origin: left;
+    transform: scaleX(0);
     animation: h2BaseLine .4s .4s;
     animation-fill-mode: forwards;
   }
@@ -38,8 +42,6 @@ h2 {
     position: absolute;
     bottom: 0;
     left: 0;
-    transform-origin: left;
-    transform: scaleX(0);
     background-color: $color1;
   }
 }
@@ -60,7 +62,7 @@ ul {
 
 .container {
   max-width: 1920px;
-  margin: 0 auto;
+  @include mx-auto;
 }
 
 @keyframes h2BaseLine {

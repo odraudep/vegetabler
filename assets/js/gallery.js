@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const
     section = document.querySelector("section.gallery"),
     gallery_container = section.querySelector(".grid"),
@@ -6,74 +6,76 @@
     imgs = [
       {
         src: "assets/img/person1.jpg",
-        alt: "Person 1"
+        alt: "Person 1",
+        class: "workers"
       },
       {
         src: "assets/img/person2.jpg",
-        alt: "Person 2"
+        alt: "Person 2",
+        class: "workers"
       },
       {
         src: "assets/img/person3.jpg",
-        alt: "Person 3"
+        alt: "Person 3",
+        class: "workers"
       },
       {
         src: "assets/img/person4.jpg",
-        alt: "Person 4"
+        alt: "Person 4",
+        class: "workers"
       },
       {
         src: "assets/img/place1.jpg",
-        alt: "Place 1"
+        alt: "Place 1",
+        class: "place"
       },
       {
         src: "assets/img/place2.jpg",
-        alt: "Place 2"
+        alt: "Place 2",
+        class: "place"
       },
       {
         src: "assets/img/place3.jpg",
-        alt: "Place 3"
+        alt: "Place 3",
+        class: "place"
       },
       {
         src: "assets/img/place4.jpg",
-        alt: "Place 4"
+        alt: "Place 4",
+        class: "place"
       },
       {
         src: "assets/img/place5.jpg",
-        alt: "Place 5"
+        alt: "Place 5",
+        class: "place"
       },
       {
         src: "assets/img/place6.jpg",
-        alt: "Place 6"
+        alt: "Place 6",
+        class: "place"
       },
       {
         src: "assets/img/place7.jpg",
-        alt: "Place 7"
+        alt: "Place 7",
+        class: "place"
       },
       {
         src: "assets/img/place8.jpg",
-        alt: "Place 8"
+        alt: "Place 8",
+        class: "place"
       },
       {
         src: "assets/img/place9.jpg",
-        alt: "Place 9"
+        alt: "Place 9",
+        class: "place"
       },
       {
         src: "assets/img/place10.jpg",
-        alt: "Place 10"
+        alt: "Place 10",
+        class: "place"
       }
-    ];
-
-  // Button onclick
-  btns.forEach(element => {
-    element.addEventListener("click", () => {
-      const btn_actived = section.querySelector("button.actived");
-
-      // Button actived class manipulation
-      btn_actived.classList.remove("actived");
-      element.classList.add("actived");
-
-      // Gallery filter
-    });
-  });
+    ],
+    imgsElement = [];
 
   // Add imgs to gallery dynamically
   imgs.forEach(data => {
@@ -81,7 +83,38 @@
 
     img.src = data.src;
     img.alt = data.alt;
+    img.classList.add(data.class);
+
+    imgsElement.push(img);
 
     gallery_container.appendChild(img);
+  });
+
+  // Button onclick
+  btns.forEach(element => {
+    element.addEventListener("click", () => {
+      const
+        btn_actived = section.querySelector("button.actived"),
+        name = element.innerText.toLowerCase();
+
+      let imagesFiltered = '';
+
+      // Button actived class manipulation
+      btn_actived.classList.remove("actived");
+      element.classList.add("actived");
+
+      // Gallery filter
+      if (name == "all") {
+        imagesFiltered = imgsElement;
+      } else {
+        imagesFiltered = imgsElement.filter(element => element.classList.contains(name));
+      }
+
+      gallery_container.textContent = '';
+
+      imagesFiltered.forEach(element => {
+        gallery_container.appendChild(element);
+      });
+    });
   });
 })();

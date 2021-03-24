@@ -62,7 +62,7 @@ button.toggler {
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-    border-radius: 5px;
+    border-radius: .3rem;
     background-color: $dark1;
     transition-delay: .2s;
 
@@ -78,7 +78,7 @@ button.toggler {
       transition-duration: .3s, .3s;
       transition-timing-function: cubic-bezier(0.18, 0.89, 0.39, 1.82);
       background-color: $dark1;
-      border-radius: 5px;
+      border-radius: .3rem;
     }
 
     &::before {
@@ -148,7 +148,8 @@ button.toggler {
       }
 
       &.active {
-        color: $color1;
+        color: darken($color1, 10%);
+        font-weight: 500;
       }
     }
   }

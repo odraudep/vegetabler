@@ -46,7 +46,11 @@
 
   section.products .products-container {
     grid-template-columns: 1fr;
-    gap: 5%;
+    gap: 0;
+
+    .product-item {
+      margin-bottom: 4rem;
+    }
   }
 
   section.gallery .gallery-container .grid {
@@ -75,6 +79,16 @@
 
   section.gallery .gallery-container .grid {
     column-count: 3;
+  }
+
+  section.contact {
+    .row {
+      flex-direction: column;
+    }
+
+    label#message {
+      width: 100%;
+    }
   }
 }
 
