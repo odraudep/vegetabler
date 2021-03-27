@@ -9,7 +9,7 @@ section.about {
     height: calc(100vh - 82px);
     min-height: 30rem;
     max-height: 38rem;
-    padding: 5rem $px 10rem;
+    padding: $py $px 10rem;
     background: {
       image: linear-gradient(
         180deg,

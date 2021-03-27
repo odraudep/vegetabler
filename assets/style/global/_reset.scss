@@ -21,7 +21,8 @@ body, header, main, section, article, footer {
 }
 
 section {
-  padding: 5rem $px;
+  padding: $py $px;
+  overflow-x: hidden;
 }
 
 h2 {

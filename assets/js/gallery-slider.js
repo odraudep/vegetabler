@@ -71,6 +71,38 @@
       imgsContainer.textContent = '';
     });
 
+    // Swiping
+    let
+      startX = '',
+      x = '';
+
+    imgsContainer.addEventListener("touchstart", e => {
+      x = '';
+
+      startX = e.touches[0].clientX;
+    });
+
+    imgsContainer.addEventListener("touchmove", e => {
+      x = e.touches[0].clientX;
+    });
+
+    imgsContainer.addEventListener("touchend", () => {
+      if (x == '')
+        x = startX;
+
+      const
+        move = x - startX,
+        base = 30;
+
+      if (move < 0 - base) {
+        next.click();
+      } else if (move > 0 + base) {
+        back.click();
+      } else {
+        return;
+      }
+    });
+
     function actionSlider(ac) {
       const imgActived = imgsContainer.querySelector("img.activedImg");
 

@@ -50,6 +50,7 @@
   .imgs-container img {
     display: none;
     max-height: 90vh;
+    max-width: 70vw;
 
     &.activedImg {
       display: block;
