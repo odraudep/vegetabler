@@ -93,8 +93,19 @@
 }
 
 @media only screen and (max-width: $sm) {
-  section.gallery .gallery-container .grid {
-    column-count: 2;
+  section.gallery {
+    .btns-group {
+      margin: 0 0 4rem -1rem;
+
+      button {
+        width: 5.5rem;
+        margin: .5em .15rem;
+      }
+    }
+
+    .gallery-container .grid {
+      column-count: 2;
+    }
   }
 }
 
@@ -117,7 +128,9 @@
     padding: 5rem $px 10rem;
   }
 
-  section.gallery .gallery-container .grid {
-    column-count: 1;
+  section.gallery {
+    .gallery-container .grid {
+      column-count: 1;
+    }
   }
 }

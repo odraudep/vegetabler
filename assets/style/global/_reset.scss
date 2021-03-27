@@ -7,8 +7,11 @@ html.hide {
   overflow: hidden;
 }
 
-body {
+html {
   overflow-x: hidden;
+}
+
+body {
   background-color: $base-color;
   color: $dark1;
 }

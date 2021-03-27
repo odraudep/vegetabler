@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/scss/main.css">
+  <link rel="stylesheet" href="assets/style/main.css">
 </head>
 <body>
 
@@ -118,8 +118,32 @@
         <button class="btn btn-sm btn-outline">Workers</button>
       </div>
 
-      <div class="gallery-container" animate="bottom">
+      <div animate="bottom" class="gallery-container" id="gallery-home">
         <div class="grid"></div>
+      </div>
+    </div>
+
+    <div class="gallery-slider" target="#gallery-home">
+      <div class="container">
+        <header>
+          <span>1/4</span>
+
+          <nav>
+            <button type="button" id="close">
+              <img src="assets/img/close.svg" alt="Close" width="30" height="30">
+            </button>
+          </nav>
+        </header>
+
+        <button type="button" class="action" id="back">
+          <img src="assets/img/action.svg" alt="" width="30" height="30">
+        </button>
+
+        <button type="button" class="action" id="next">
+          <img src="assets/img/action.svg" alt="" width="30" height="30">
+        </button>
+
+        <div class="imgs-container"></div>
       </div>
     </div>
   </section>
@@ -165,6 +189,7 @@
   <script src="assets/js/products.js"></script>
   <script src="assets/js/dragslider.js"></script>
   <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/gallery-slider.js"></script>
   <script src="assets/js/animationscroll.js"></script>
 
 </body>

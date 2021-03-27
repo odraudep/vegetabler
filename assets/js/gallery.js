@@ -2,7 +2,7 @@
   const
     section = document.querySelector("section.gallery"),
     gallery_container = section.querySelector(".grid"),
-    btns = section.querySelectorAll("button"),
+    btns = section.querySelectorAll(".btns-group button"),
     imgs = [
       {
         src: "assets/img/person1.jpg",
@@ -74,20 +74,23 @@
         alt: "Place 10",
         class: "place"
       }
-    ],
-    imgsElement = [];
+    ];
 
   // Add imgs to gallery dynamically
   imgs.forEach(data => {
-    const img = document.createElement("img");
+    const
+      div = document.createElement("div"),
+      img = document.createElement("img");
+
+    div.classList.add("img");
 
     img.src = data.src;
     img.alt = data.alt;
     img.classList.add(data.class);
 
-    imgsElement.push(img);
+    div.appendChild(img);
 
-    gallery_container.appendChild(img);
+    gallery_container.appendChild(div);
   });
 
   // Button onclick
@@ -95,25 +98,28 @@
     element.addEventListener("click", () => {
       const
         btn_actived = section.querySelector("button.actived"),
+        images = gallery_container.querySelectorAll(".img img"),
         name = element.innerText.toLowerCase();
-
-      let imagesFiltered = '';
 
       // Button actived class manipulation
       btn_actived.classList.remove("actived");
       element.classList.add("actived");
 
       // Gallery filter
-      if (name == "all") {
-        imagesFiltered = imgsElement;
-      } else {
-        imagesFiltered = imgsElement.filter(element => element.classList.contains(name));
-      }
+      images.forEach(img => {
+        const parent = img.parentElement;
 
-      gallery_container.textContent = '';
+        parent.classList.remove("hide");
+        parent.classList.add("show");
 
-      imagesFiltered.forEach(element => {
-        gallery_container.appendChild(element);
+        if (name == "all")
+        return;
+
+        if (img.classList.contains(name))
+        return;
+
+        parent.classList.remove("show");
+        parent.classList.add("hide");
       });
     });
   });
